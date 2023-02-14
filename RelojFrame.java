@@ -6,27 +6,27 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.FlowLayout;
 
-public class ClockFrame extends JFrame {
+public class RelojFrame extends JFrame {
 
-    private ClockPanel myClockPanel;
+    private RelojPanel myRelojPanel;
 
-    public ClockFrame() {
+    public RelojFrame() {
 
-        myClockPanel = new ClockPanel();
+        myRelojPanel = new RelojPanel();
 
         setLayout(null);
-        setTitle("JClock Clock Java App");
+        setTitle("JClock Reloj Java App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getContentPane().setBackground(Color.RED);
-        setContentPane(myClockPanel);
+        setContentPane(myRelojPanel);
         setPreferredSize(new Dimension(350,200));
         setBounds(0,0,350,200);
         setLocationRelativeTo(null);
         setVisible(true);
 
         while(true) {
-            myClockPanel.setTime();
+            myRelojPanel.setTime();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

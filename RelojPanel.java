@@ -11,15 +11,15 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class ClockPanel extends JPanel {
+public class RelojPanel extends JPanel {
 
-    private JLabel timeLabel, dayLabel, dateLabel;
+    private JLabel tiempoLabel, diaLabel, fechaLabel;
     private LocalTime tiempoAhoraLocalTime;
     private LocalDate diaLocalDate, fechaLocalDate;
     private DateTimeFormatter tiempoAhoraDateTimeFormatter, diaLocalDateTimeFormatter, fechaLocalDateTimeFormatter;
     private String tiempoAhoraString, diaString, fechaString;
 
-    public ClockPanel() {
+    public RelojPanel() {
 
         this.setLayout(new FlowLayout());
         this.setPreferredSize(new Dimension(350,200));
@@ -30,42 +30,42 @@ public class ClockPanel extends JPanel {
         diaLocalDateTimeFormatter = DateTimeFormatter.ofPattern("EEEE");
         fechaLocalDateTimeFormatter = DateTimeFormatter.ofPattern("MMMM d, y");
 
-        timeLabel = new JLabel();
-        timeLabel.setFont(new Font("JetBrains Mono",Font.BOLD,50));
-        timeLabel.setBackground(new Color(95,42,98));
-        timeLabel.setForeground(Color.GREEN);
-        timeLabel.setOpaque(true);
+        tiempoLabel = new JLabel();
+        tiempoLabel.setFont(new Font("JetBrains Mono",Font.BOLD,50));
+        tiempoLabel.setBackground(new Color(95,42,98));
+        tiempoLabel.setForeground(Color.GREEN);
+        tiempoLabel.setOpaque(true);
 
-        dayLabel = new JLabel();
-        dayLabel.setFont(new Font("JetBrains Mono",Font.PLAIN,35));
-        dayLabel.setBackground(new Color(118,88,152));
-        dayLabel.setForeground(Color.GREEN);
-        dayLabel.setOpaque(true);
+        diaLabel = new JLabel();
+        diaLabel.setFont(new Font("JetBrains Mono",Font.PLAIN,35));
+        diaLabel.setBackground(new Color(118,88,152));
+        diaLabel.setForeground(Color.GREEN);
+        diaLabel.setOpaque(true);
 
-        dateLabel = new JLabel();
-        dateLabel.setFont(new Font("JetBrains Mono",Font.PLAIN,25));
-        dateLabel.setBackground(new Color(169,118,195));
-        dateLabel.setForeground(Color.GREEN);
-        dateLabel.setOpaque(true);
+        fechaLabel = new JLabel();
+        fechaLabel.setFont(new Font("JetBrains Mono",Font.PLAIN,25));
+        fechaLabel.setBackground(new Color(169,118,195));
+        fechaLabel.setForeground(Color.GREEN);
+        fechaLabel.setOpaque(true);
 
-        this.add(timeLabel);
-        this.add(dayLabel);
-        this.add(dateLabel);
+        this.add(tiempoLabel);
+        this.add(diaLabel);
+        this.add(fechaLabel);
         this.setVisible(true);
     }
 
     public void setTime() {
         tiempoAhoraLocalTime = LocalTime.now();
         tiempoAhoraString = tiempoAhoraDateTimeFormatter.format(tiempoAhoraLocalTime);
-        timeLabel.setText(tiempoAhoraString);
+        tiempoLabel.setText(tiempoAhoraString);
 
         diaLocalDate = LocalDate.now();
         diaString = diaLocalDateTimeFormatter.format(diaLocalDate);
-        dayLabel.setText(diaString);
+        diaLabel.setText(diaString);
 
         fechaLocalDate = LocalDate.now();
         fechaString = fechaLocalDateTimeFormatter.format(fechaLocalDate);
-        dateLabel.setText(fechaString);
+        fechaLabel.setText(fechaString);
 
     }
 }
