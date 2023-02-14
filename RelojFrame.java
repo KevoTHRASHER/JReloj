@@ -25,8 +25,9 @@ public class RelojFrame extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+//  Utilizando Hilos -> THREADS y el metodo setTiempo de la clase RelojPanel actualizo el reloj
         while(true) {
-            myRelojPanel.setTime();
+            myRelojPanel.setTiempo();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

@@ -54,7 +54,7 @@ public class RelojPanel extends JPanel {
         this.setVisible(true);
     }
 
-    public void setTime() {
+    public void setTiempo() {
         tiempoAhoraLocalTime = LocalTime.now();
         tiempoAhoraString = tiempoAhoraDateTimeFormatter.format(tiempoAhoraLocalTime);
         tiempoLabel.setText(tiempoAhoraString);
